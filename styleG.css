@@ -36,36 +36,6 @@ body {
 /* hero */
 
 /* section */
-nav
-{
-  box-sizing: border-box;
-  background-color: #d8d8d8;
-  position: absolute;
-  text-align: center;
-  top: 0;
-  bottom: 0;
-  width: 150px;
-  height: 100%;
-  transition: width 0.2s linear;
-  overflow: hidden;
-  box-shadow: 0 20px 35px rgba(0, 0, o, 0.1);
-}
-
-nav ul li 
-{
-  margin: 10px;
-}
-
-nav ul li a
-{
-  position: relative;
-  color: #e49393;
-  font-size: 14px;
-  display: table;
-  width: 200px;
-  padding: 10px;
-}
-
 
 /* /section */
 
@@ -93,20 +63,12 @@ nav ul li a
   flex: 0;
 }
 
-ul
-{
-  list-style: none;
-  -webkit-tap-highlight-color: transparent;
-  text-align: center;
-  flex: 1;
-}
 
 ul li a
 {
-  color: aliceblue;
   -webkit-tap-highlight-color: transparent;
   text-decoration: none;
-  text-align: end;
+  
   font-weight: 600;
   font-size: 20px;
 }
@@ -324,9 +286,13 @@ h4
   background-color: #d8d8d8;
 }
 
-.fc-p
+.fc-p2
 {
-  color: #e49393;
+  color: #E49393;
 }
 
+.fc-p1
+{
+  color: #245953;
+}
 /* color */
