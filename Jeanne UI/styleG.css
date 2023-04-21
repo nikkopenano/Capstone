@@ -76,7 +76,7 @@ ul li a
 ul li a:hover
 
 {
-  color: rgb(149, 152, 155);
+  color: #2459539c;
   -webkit-tap-highlight-color: transparent;
   transition: .5s;
 }
