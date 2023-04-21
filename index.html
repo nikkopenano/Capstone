@@ -23,68 +23,75 @@
 
 </head>
 <body>
-  <header>
 
-    <!-- Navbar -->
-    <nav>
-    <div class="sidebar">
-      <div class="logo-content">
-        <h3 class="logo-name">
-          Pranam
-        </h3>
-      </div>
-      <div class="btn-toggle">
-        <i class="bx bx-menu"></i>
-      </div>
+  <div class="container-fluid">
+    <div class="row flex-nowrap">
+      <div class="bg-2 col-auto col-md-3 col-lg-3 min-vh-100 d-flex flex-column justify-content-between">
+      
+        <div class="bg-2 p-2">
+          
+          <a class="d-flex text-decoration-none align-items-center mt-1 d-inline-flex flex-column" href="">
+            <img src="logo.png" alt=""><span class="fs-4 d-none d-sm-inline fc-p1">Sidemenu</span>
+          </a>
+        
+
+          <ul class="nav nav-pills flex-column mt-4 p-2 align-content-start">
+            <li class="nav-item">
+              <a href="" class="nav-link fc-p1" aria-current="page"><i class='bx bxs-chalkboard mx-2' style='color:#245953'></i><span class="fs-4 ms-3 d-none d-sm-inline">Dashboard</span></a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link fc-p1" > <i class='bx bxs-store-alt mx-2' style='color:#245953'></i><span class="fs-4 ms-3 d-none d-sm-inline">Products</span></a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link fc-p1" > <i class='bx bxs-chalkboard mx-2' style='color:#245953'></i><span class="fs-4 ms-3 d-none d-sm-inline">Sales</span></a>
+            </li>
+            <li class="nav-item">
+              <a href="" class="nav-link fc-p1" > <i class='bx bxs-log-in-circle mx-2' style='color:#245953'></i><span class="fs-4 ms-3 d-none d-sm-inline">Login</span></a>
+            </li>
+           
+          </ul>
+
+        </div>
+
+        <div class="dropdown open p-3">
+          <button class="btn border-none dropdown-toggle" type="button" id="triggerId" aria-expanded="false" data-bs-toggle="dropdown">
+            <i class="fa fa-user"></i><span></span>
+          </button>
+
+          <div class="dropdown-menu" aria-labelledby="triggerId">
+            <button class="dropdown-item" href="#">Setting</button>
+            <button class="dropdown-item " href="#">Profile</button>
+          </div>
+        </div>
+
+
+
     </div>
-
     
-    <ul class="nav">
-      <li>
-        <box-icon name='home'></box-icon>
-        <span>Home</span>
-      </li>
+        <!-- contents here -->
+        <div class="p-3">
 
-      <li>
-        <i class="bx bxs-dashboard"></i>
-        <span>Programs</span>
-      </li>
-
-      <li>
-        <i class="bx bxs-dashboard"></i>
-        <span>Profile</span>
-      </li>
-
-      <li>
-        <i class="bx bxs-dashboard"></i>
-        <span>Login</span>
-      </li>
-
-    </ul>
-  </nav>
- 
-  </header>
-
-        <!-- Main Content -->
-        <div>
-        <section class="hero-section">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6">
-                <h1>Pranam</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, ipsum et tincidunt faucibus, risus mi vestibulum orci, eget pharetra neque justo eu quam.</p>
-                <a href="#" class="btn btn-primary">Learn More</a>
-              </div>
-              <div class="col-md-6">
-                <img src="https://via.placeholder.com/500x500" alt="Hero Image" class="img-fluid">
+          <section class="hero-section mt-5">
+          
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6">
+                  <h1>Pranam</h1>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, ipsum et tincidunt faucibus, risus mi vestibulum orci, eget pharetra neque justo eu quam.</p>
+                  <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+              
               </div>
             </div>
-          </div>
-        </section>       
-      </div>
+          </section>       
+       
 
 
-    
+        </div>
+  </div>
+ 
+
+
 
 </body>
 
@@ -92,7 +99,6 @@
 <script src="js/bootstrap.bundle.min.js"></script>
 <script>
   var nav = document.querySelector('nav');
-
   window.addEventListener('scroll', function () {
   if(window.pageYOffset > 100) {
     nav.classList.add('bg-transparent', 'shadow');
