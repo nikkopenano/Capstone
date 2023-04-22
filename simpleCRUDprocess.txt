@@ -1,0 +1,161 @@
+1
+composer create-project --prefer-dist laravel/laravel crudapplication
+2
+Create the Database on xampp which name is storeshop
+3
+Change .env File for username, password and DB Name
+4
+run check the application by running " php artisan serve " 
+to show laravel welcome screen
+5
+Create Migration create tables by running
+php artisan make:migration create_students_table
+6
+check database folder migrations for
+create_students_table.php
+click and open students table
+7 
+add the fields
+
+public function up()
+    {
+        Schema::create('students', function (Blueprint $table) {
+            $table->id();
+            $table->string("name");
+            $table->string("address");
+            $table->string("mobile");
+            $table->timestamps();
+        });
+    }
+
+8
+after adding type " php artisan migrate "
+The table has been migrated
+9
+Create Controller
+php artisan make:controller StudentController --resource
+
+10
+Controller
+After that Pass All view pages through Controller. you have to add the Model namespace here
+
+use App\Models\Student;   Data is coming from the database via Model.
+
+<?php
+namespace App\Http\Controllers;
+use Illuminate\Http\Request;
+use App\Models\Student;
+class StudentController extends Controller
+{
+   public function index()
+    {
+        $employees = Employee::all();
+        return view ('employees.index')->with('employees', $employees);
+    }
+ 
+    
+    public function create()
+    {
+        return view('employees.create');
+    }
+ 
+   
+    public function store(Request $request)
+    {
+        $input = $request->all();
+        Employee::create($input);
+        return redirect('employee')->with('flash_message', 'Employee Addedd!');  
+    }
+ 
+    
+    public function show($id)
+    {
+        $employee = Employee::find($id);
+        return view('employees.show')->with('employees', $employee);
+    }
+ 
+    
+    public function edit($id)
+    {
+        $employee = Employee::find($id);
+        return view('employees.edit')->with('employees', $employee);
+    }
+ 
+  
+    public function update(Request $request, $id)
+    {
+        $employee = Employee::find($id);
+        $input = $request->all();
+        $employee->update($input);
+        return redirect('employee')->with('flash_message', 'employee Updated!');  
+    }
+ 
+   
+    public function destroy($id)
+    {
+        Employee::destroy($id);
+        return redirect('employee')->with('flash_message', 'Employee deleted!');  
+    }
+}
+
+
+11
+Create Model
+Model is used to get the data from the database.
+" php artisan make:model Student "
+
+12
+After Model is Created the look like this. Code inside Model Class (app\Models\)
+
+Change it as like this
+
+Add the Namespace above
+
+namespace App\Models;
+
+<?php
+ 
+namespace App\Models;
+ 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+ 
+class Student extends Model
+{
+    protected $table = 'students';
+    protected $primaryKey = 'id';
+    protected $fillable = ['name', 'address', 'mobile'];
+}
+
+13
+Create a Folder inside the resources-views
+inside the views folder create the students folder
+In Laravel you have create the pages using pagename.blade.php
+
+Create Pages
+layout.blade.php
+index.blade.php
+create.blade.php
+edit.blade.php
+show.blade.php
+
+14
+Pages are Manage through routes. If you are crud system simple you can add it the routes one line look like this
+add this in routes web.php
+
+You have to add the ControllerNameSpace
+use App\Http\Controllers\ContactController;
+
+<?php
+ 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EmployeeController;
+ 
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::resource("/employee", EmployeeController::class);
+
+
+15
+run command: php artisan serve
